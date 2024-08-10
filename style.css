@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    --size: 300px;
+    margin: 0;
+}
+
+.note-app {
+    width: 100%;
+    height: 100vh;
+    background: #2f363e;
+    padding: 2rem;
+}
+
+.note-app__create-note {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.create-note-container__add-note {
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.create-note-container__add-note > i {
+    font-size: 3rem;
+    cursor: pointer;
+    color: rgb(218, 218, 218);
+}
+
+.create-note-container__create-note {
+    display: none;
+}
+
+.create-note-container__create-note {
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid black;    
+    background: rgb(238, 237, 237);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    outline: none;
+    resize: none;
+}
+
+.app-note {
+    user-select: none;
+    position: relative;
+    padding: 1rem;    
+    width: var(--size);
+    height: var(--size);
+    border: 1px solid black;    
+    background: rgb(206, 110, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    overflow: hidden;
+}
+
+.app-note::before {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: 'Double Click To Delete Note';
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.app-note:hover::before { /* При наведении мыши на элемент .app-note, вложенный в него элемент ".app-note::before" отобразится*/
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: 1s;
+}
+
+.note-app__notes-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
